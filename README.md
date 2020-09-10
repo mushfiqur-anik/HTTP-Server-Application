@@ -1,22 +1,19 @@
 # HTTP-Server-Application
 
 ## Description of the problem
-you will implement a simple HTTP server application and use it with off-the-shelf HTTP clients
-Precisely, we aim to build a simple remote file manager on top of the HTTP protocol in the server side
+In this project a simple HTTP server library was built and it was tested with existing HTTP Client applications. A remote file server manager was built on top of the existing library features (Programmed in the previous project). The features that are added are the following: 
+1) GET /           - This command returns all the files that are in the specified directory.
+2) GET /someFile   - This command looks up the file "someFile" in the specified directory and displays the contents inside the file. If the file doesn't exist 
+                      in the current directory then it displays the appropriate status code (For example: HTTP ERROR 404).
+3) POST /someFile  - This command creates a new file "someFile" in the directory and writes the content specified in the body of the request. If the file                                exist in the directory then it overrides the data inside the file with the content specified in the body of the request.
 
-Similarly to Assignment #1, the goal of the Lab is to develop your programming library that implements the basic functionalities of the HTTP server as will be described in the following sections.
-
- In other words, you should build a remote file server manager on top the library according to the following requirements:
- 1-GET / returns a list of the current files in the data directory. You can return differenttype format such as JSON, XML, plain text, HTML according to the Accept key of the
-Comp445 – Lab Assignment # 2 Page 3
-header of the request. However, this is not mandatory; you can simply ignore the header value and make your server always returns the same output.
-2-GET /foo returns the content of the file named foo in the data directory. If thecontent does not exist, you should return an appropriate status code (e.g. HTTPERROR 404).
-3-POST /bar should create or overwrite the file named bar in the data directory withthe content of the body of the request. You can implement more options for thePOST such as overwrite=true|false, but again this is optional.
  
  ## File List
+ - HttpServer.java
+ - HttpServerApplication.java
+ 
  
  ## Built with
-
 * [**Java**](https://en.wikipedia.org/wiki/Java_(programming_language)) - The programming language used
 * [**Eclipse**](https://en.wikipedia.org/wiki/Eclipse_(software)) - The IDE used 
 
