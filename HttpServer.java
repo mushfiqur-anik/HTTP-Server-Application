@@ -27,7 +27,6 @@ public class HttpServer {
 	static String responseHeader;
 	static String responseEntityBody;
 	
-	
 	/** Establish server connection
 	 *  This starts the server and waits for clients to connect to this server
 	 */
@@ -53,22 +52,21 @@ public class HttpServer {
 		}
 	}
 	
-	
 	// Start server
 	public static void startServer(Socket clientSocket, boolean verbose, int port, String directory) { 
 		
 		try { 
 			
-			    reset();
+	        reset();
 			    
-			    // Ask for user request
+	        // Ask for user request
                 String httpcRequest;
                 String[] httpSplit;
                 
             	Scanner keyboard = new Scanner(System.in); // Scanner
                 
-			    // Output stream
-			    OutputStreamWriter outputStream = new OutputStreamWriter(clientSocket.getOutputStream());
+	            // Output stream
+	            OutputStreamWriter outputStream = new OutputStreamWriter(clientSocket.getOutputStream());
 	            BufferedWriter out = new BufferedWriter(outputStream);
 	            
 	            // Input stream
@@ -89,7 +87,7 @@ public class HttpServer {
 	    			if(httpSplit[i].contains("-h")) { 
 	    				requestHeader = httpSplit[i+1];
 	    			}
-	    			
+	    		
 	    			// entity
 	    			if(httpSplit[i].contains("-d")) { 
 	    				requestEntityBody = httpSplit[i+1];
@@ -102,12 +100,12 @@ public class HttpServer {
 	    	        phrase = "Not found";
 	    	        responseHeader = requestHeader;
 	    		
-	    			out.write(responseVersion + " " + statusCode + " " + phrase + "\r\n" + responseHeader + "\r\n" + "\r\n" + responseEntityBody);
+	    		out.write(responseVersion + " " + statusCode + " " + phrase + "\r\n" + responseHeader + "\r\n" + "\r\n" + responseEntityBody);
 
 	                out.flush();
 	                clientSocket.shutdownOutput();
 	                clientSocket.close();
-			    }
+			}
 	    		
 	    		else { 
 	    			
@@ -119,13 +117,12 @@ public class HttpServer {
 	    				System.out.println("Implementing get files");
 	    				getFileResponse(directory);
 	    			}
-	    			
+	    		
 	    			else { 
 	    				// Return file content
 	    				System.out.println("Implementing get");
 	    				getResponse(directory, url);
 	    			}
-	    			
 	    			
 	    		// Response from server
 	    		out.write(responseVersion + " " + statusCode + " " + phrase + "\r\n" + responseHeader + "\r\n" + "\r\n" + responseEntityBody);
@@ -148,14 +145,13 @@ public class HttpServer {
 	                clientSocket.shutdownOutput();
 	                clientSocket.close();
 	    		}
-	    	}
+	    	 }
 		}
 		
 		catch(Exception e) { 
 			e.getMessage();
 		}
 	}
-	
 	
 	// Get File method 
 	public static void getFileResponse(String directory) {
@@ -176,7 +172,6 @@ public class HttpServer {
         responseHeader = requestHeader;
 	}
 	
-	
 	// Get method
 	public static void getResponse(String directory, String url) {
 		File file = new File(directory+url);
@@ -185,7 +180,6 @@ public class HttpServer {
 		if(file.exists()) {
 			try { 
 				readFile(directory, url);
-		
 			}
 			
 			catch(Exception e) { 
@@ -198,7 +192,6 @@ public class HttpServer {
 			phrase = "Not Found";
 		}
 	}
-	
 	
 	// Post method
 	public static void postResponse(String directory, String url, String requestEntityBody) { 
@@ -249,7 +242,6 @@ public class HttpServer {
 		}
 		
 	}
-	
 	
 	// Reads the selected file
 	public static void readFile(String directory, String url) { 
