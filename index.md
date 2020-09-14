@@ -1,37 +1,25 @@
-## Welcome to GitHub Pages
+# HTTP-Server-Application
 
-You can use the [editor on GitHub](https://github.com/mushfiqur-anik/HTTP-Server-Application/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Description of the problem
+In this project a simple HTTP server library was built and it was tested with existing HTTP Client applications. A remote file server manager was built on top of the existing library features (Programmed in the previous project). The features that are added are the following: 
+1) GET /           - This command returns all the files that are in the specified directory.
+2) GET /someFile   - This command looks up the file "someFile" in the specified directory and displays the contents inside the file. If the file doesn't exist 
+                      in the current directory then it displays the appropriate status code (For example: HTTP ERROR 404).
+3) POST /someFile  - This command creates a new file "someFile" in the directory and writes the content specified in the body of the request. If the file                                exist in the directory then it overrides the data inside the file with the content specified in the body of the request.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+ 
+ ## File List
+ - HttpServer.java
+ - HttpServerApplication.java
+ 
+ 
+ ## Built with
+* [**Java**](https://en.wikipedia.org/wiki/Java_(programming_language)) - The programming language used
+* [**Eclipse**](https://en.wikipedia.org/wiki/Eclipse_(software)) - The IDE used 
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Author(s)
 
-```markdown
-Syntax highlighted code block
+* [**Mushfiqur Anik**](https://github.com/mushfiqur-anik)
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/mushfiqur-anik/HTTP-Server-Application/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
